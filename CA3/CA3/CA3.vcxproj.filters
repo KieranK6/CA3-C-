@@ -13,10 +13,51 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="System">
+      <UniqueIdentifier>{5d6d3ffb-2923-4748-90b9-7e4682764bc3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="System\Email">
+      <UniqueIdentifier>{c1512441-eaf2-493e-8a78-c4fab609af51}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="System\Utility">
+      <UniqueIdentifier>{5ce6f936-42ea-464b-b92f-6cb1c8a65944}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Email.cpp">
+      <Filter>System\Email</Filter>
+    </ClCompile>
+    <ClCompile Include="Attachment.cpp">
+      <Filter>System\Email</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuOptions.cpp">
+      <Filter>System\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="User.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="System.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MenuOptions.h">
+      <Filter>System\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Attachment.h">
+      <Filter>System\Email</Filter>
+    </ClInclude>
+    <ClInclude Include="Email.h">
+      <Filter>System\Email</Filter>
+    </ClInclude>
+    <ClInclude Include="User.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="System.h">
+      <Filter>System</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
