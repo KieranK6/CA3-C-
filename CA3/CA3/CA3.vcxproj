@@ -122,6 +122,7 @@
     <ClInclude Include="Attachment.h" />
     <ClInclude Include="Database.h" />
     <ClInclude Include="Email.h" />
+    <ClInclude Include="GenericMap.h" />
     <ClInclude Include="MenuOptions.h" />
     <ClInclude Include="System.h" />
     <ClInclude Include="User.h" />

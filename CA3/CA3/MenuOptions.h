@@ -6,19 +6,24 @@
 
 #pragma once
 #include <iostream>
+#include <string>
 #include <list>
 #include <array>
+#include <algorithm>
 
 class MenuOptions
 {
 public:
-	MenuOptions(std::string name, int indexOfExitOption);
+	MenuOptions(std::string name);
 	MenuOptions();
 	~MenuOptions();
 
-	int showMenuGetChoice(std::string strPrompt);
+	std::list<std::string> mList;
+
+	void showMenu();
 	bool add(std::string s);
-	bool addAll(std::string sArray[]);
+	bool addAll(std::array<std::string, 4>, int size);
+	bool contains(std::string checkstring);
 
 	int size() { return mList.size(); }
 	void clear() { mList.clear(); }
@@ -33,7 +38,7 @@ private:
 	const std::string MenuHeaderBorder = " *************************** ";
 	std::string name;
 	int indexOfExitOption;
-	std::list<std::string> mList;
+	
 	
 };
 

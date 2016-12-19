@@ -30,9 +30,6 @@
     <ClCompile Include="Email.cpp">
       <Filter>System\Email</Filter>
     </ClCompile>
-    <ClCompile Include="Attachment.cpp">
-      <Filter>System\Email</Filter>
-    </ClCompile>
     <ClCompile Include="MenuOptions.cpp">
       <Filter>System\Utility</Filter>
     </ClCompile>
@@ -44,6 +41,9 @@
     </ClCompile>
     <ClCompile Include="Database.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Attachment.cpp">
+      <Filter>System\Email</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -64,6 +64,9 @@
     </ClInclude>
     <ClInclude Include="Database.h">
       <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GenericMap.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
