@@ -1,4 +1,6 @@
 ﻿  Main.cpp
 c:\users\kieran\desktop\ca3\ca3\ca3\system.h(36): warning C4091: 'static ': ignored on left of 'System' when no variable is declared
+c:\users\kieran\desktop\ca3\ca3\ca3\main.cpp(121): warning C4018: '>': signed/unsigned mismatch
+c:\users\kieran\desktop\ca3\ca3\ca3\main.cpp(157): warning C4018: '>': signed/unsigned mismatch
   CA3.vcxproj -> C:\Users\Kieran\Desktop\CA3\CA3\Debug\CA3.exe
   CA3.vcxproj -> C:\Users\Kieran\Desktop\CA3\CA3\Debug\CA3.pdb (Partial PDB)

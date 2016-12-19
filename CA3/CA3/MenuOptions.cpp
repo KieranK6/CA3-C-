@@ -26,9 +26,6 @@ void MenuOptions::showMenu()
 		std::cout << "[" << index << "]" << s << std::endl;
 		index++;
 	}
-
-	std::cout << "Enter Choice: " << std::endl;
-
 }
 
 bool MenuOptions::add(std::string s)
@@ -42,7 +39,7 @@ bool MenuOptions::add(std::string s)
 		return false;
 }
 
-bool MenuOptions::addAll(std::string sArray[], int size)
+bool MenuOptions::addAll(std::array<std::string, 4> sArray, int size)
 {
 	bool success = false;
 	for (int i = 0; i < size; i++)

@@ -22,7 +22,7 @@ public:
 
 	void showMenu();
 	bool add(std::string s);
-	bool addAll(std::string sArray[], int size);
+	bool addAll(std::array<std::string, 4>, int size);
 	bool contains(std::string checkstring);
 
 	int size() { return mList.size(); }
