@@ -1,4 +1,4 @@
 ﻿  System.cpp
-c:\users\kieran\desktop\ca3\ca3\ca3\system.h(36): warning C4091: 'static ': ignored on left of 'System' when no variable is declared
-  CA3.vcxproj -> C:\Users\Kieran\Desktop\CA3\CA3\Debug\CA3.exe
-  CA3.vcxproj -> C:\Users\Kieran\Desktop\CA3\CA3\Debug\CA3.pdb (Partial PDB)
+c:\users\ciara_000\ca3-c-\ca3\ca3\system.h(41): warning C4091: 'static ': ignored on left of 'System' when no variable is declared
+  CA3.vcxproj -> C:\Users\ciara_000\CA3-C-\CA3\Debug\CA3.exe
+  CA3.vcxproj -> C:\Users\ciara_000\CA3-C-\CA3\Debug\CA3.pdb (Partial PDB)

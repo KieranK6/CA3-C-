@@ -2,15 +2,15 @@
 
 int User::count = 1;
 
-User::User() : id(count), Email("def_email"), Password("def_password"), Username("def_user" + count)
+User::User()
+{
+}
+
+User::User(std::string username, std::string password) : id(count), username(username), password(password)
 {
 	count++;
 }
 
-User::User(std::string Email, std::string Password, std::string Username) : id(count), Email(Email), Password(Password), Username(Username)
-{
-	count++;
-}
 
 User::~User()
 {

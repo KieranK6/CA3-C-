@@ -6,16 +6,23 @@
 
 #pragma once
 #include <iostream>
+#include <string>
+#include <list>
+#include "Email.h"
+
 class User
 {
 public:
 	User();
-	User(std::string Email, std::string Password, std::string Username);
+	User(std::string username, std::string password);
 	~User();
 
+	std::string username;
+	std::list<Email> emails;
 private:
 	int id;
-	std::string Email, Password, Username;
+	std::string password;
+	
 
 protected:
 	static int count;

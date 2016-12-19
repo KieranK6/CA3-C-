@@ -20,17 +20,22 @@ public:
 	Database db;
 
 	// SYSTEM FUNCTIONS
+	void InitializeDB();
 	bool Login();
 	bool Logout();
 	bool Register();
 
 
 	// POST LOGIN FUNCTIONS
-	static bool IsLoggedIn();
+	bool IsLoggedIn();
 	// below funcs call above func to make sure user is logged in
-	static bool Send(Email email, User recipient);
-	static bool WriteMail();
-	static bool Search();
+	bool Send(Email email, User recipient);
+	bool WriteMail();
+	bool Search();
+
+	// DEBUG FUNCTIONS
+	void printDB();
+	void printUserEmails();
 
 private:
 };

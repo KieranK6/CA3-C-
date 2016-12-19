@@ -15,18 +15,30 @@ int main()
 }
 
 void initialize() {
-	sys = System();
+	//sys = System();
 }
 void demo() {
 	//System::Register();
 	//System::current;
-	sys.Register();
+	sys.printDB();
+	
+	sys.Register(); // Registers a new user
 
-	sys.Login();
-	//std::cout << sys.current;
+	sys.printDB();	// Prints the list of users
 
-	//sys.WriteMail();
+	sys.Login();	// nothing atm
+
+	sys.printUserEmails();
+
+	if (sys.IsLoggedIn()) {
+		// someone is logged in
+		std::cout << "Hello "+sys.current->username+"!\n"; // example
+	}
+	else {
+		// nobodys logged in
+	}
+
+	sys.WriteMail();
 
 	sys.Logout();
-	//std::cout << sys.current;
 }
