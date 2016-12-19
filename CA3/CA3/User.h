@@ -19,6 +19,7 @@ public:
 
 	std::string username;
 	std::list<Email> emails;
+	Email* currentEmail;
 private:
 	int id;
 	std::string password;

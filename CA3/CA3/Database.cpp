@@ -56,7 +56,7 @@ bool Database::ReadEmails() {
 				userPtr->emails.push_back(*emailPtr);
 			}
 			if (Contains(newEmail.recipient)) {
-				userPtr = &userMap.at(newEmail.sender);
+				userPtr = &userMap.at(newEmail.recipient);
 				userPtr->emails.push_back(*emailPtr);
 			}
 		}
@@ -95,8 +95,6 @@ bool Database::WriteUser(std::string user, std::string password)
 bool Database::WriteEmail(std::string sender, std::string recipient, std::string message)
 {
 	std::ofstream myfile(name+email, std::ios_base::app);
-	if (!userMap.count(user))
-	{
 		if (myfile.is_open())
 		{
 			myfile << sender;
@@ -104,14 +102,48 @@ bool Database::WriteEmail(std::string sender, std::string recipient, std::string
 			myfile << ":" + message + "\n";
 			myfile.close();
 			std::cout << "Email created!\n";
-			emails.push_back(Email(sender, recipient, "subject", message));
+
+			Email newEmail = Email(sender, recipient, "subject", message);
+			emails.push_back(newEmail);
+
+			User *userPtr;
+			userPtr = &userMap.at(newEmail.sender);
+			userPtr->emails.push_back(*&newEmail);
+
+			if (Contains(newEmail.recipient)) {
+				userPtr = &userMap.at(newEmail.recipient);
+				userPtr->emails.push_back(*&newEmail);
+			}
+
 			return true;
 		}
+	else return false;
+}
+
+bool Database::WriteEmail(Email e)
+{
+	std::ofstream myfile(name + email, std::ios_base::app);
+	if (myfile.is_open())
+	{
+		myfile << e.sender;
+		myfile << ":" + e.recipient;
+		myfile << ":" + e.Body + "\n";
+		myfile.close();
+		std::cout << "Email created!\n";
+		emails.push_back(e);
+
+		User *userPtr;
+		userPtr = &userMap.at(e.sender);
+		userPtr->emails.push_back(*&e);
+
+		if (Contains(e.recipient)) {
+			userPtr = &userMap.at(e.recipient);
+			userPtr->emails.push_back(*&e);
+		}
+
+		return true;
 	}
-	else {
-		std::cout << "Error: User already exists!\n";
-	}
-	return false;
+	else return false;
 }
 
 bool Database::Contains(std::string username)

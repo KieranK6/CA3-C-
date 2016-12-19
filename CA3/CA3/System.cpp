@@ -71,7 +71,7 @@ bool System::IsLoggedIn()
 	return true;
 }
 
-bool System::WriteMail()
+bool System::CreateMail()
 {
 	std::string recipient;
 	std::string message;
@@ -80,10 +80,22 @@ bool System::WriteMail()
 	std::cin >> recipient;
 	std::cout << "Enter message:\n";
 	std::cin >> message;
-
-	return (db.WriteEmail(current->username, recipient, message));
+	current->currentEmail = new Email(current->username, recipient, "subject", message);
+	return true;
 }
 
+bool System::SendMail()
+{
+	if (current->currentEmail == nullptr) {
+		std::cout << "No email written!\n";
+		return false;
+	}
+	if (db.WriteEmail(*(current->currentEmail))) {
+		current->currentEmail = nullptr;
+		std::cout << "Sent!\n";
+		return true;
+	}
+}
 void System::printDB()
 {
 	db.Print();
