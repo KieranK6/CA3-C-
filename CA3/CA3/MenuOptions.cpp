@@ -17,12 +17,13 @@ MenuOptions::~MenuOptions()
 
 int MenuOptions::showMenuGetChoice(std::string strPrompt)
 {
+	return 1;
 
 }
 
 bool MenuOptions::add(std::string s)
 {
-
+	return true;
 }
 
 bool MenuOptions::addAll(std::string sArray[])

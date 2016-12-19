@@ -1,5 +1,6 @@
 #include "Email.h"
 
+tm getCurrentTime();
 
 Email::Email() : Sender("Def_Sender"), Recipient("Def_Recipient"), Subject("Def _Subject"), Body("Def_Body")
 {

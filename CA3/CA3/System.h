@@ -7,6 +7,7 @@
 #pragma once
 #include "User.h"
 #include "Email.h"
+#include "Database.h"
 
 #include <list>
 
@@ -15,13 +16,13 @@ public:
 	System();
 	~System();
 
-	static User *current;
-	static Database db;
+	User *current;
+	Database db;
 
 	// SYSTEM FUNCTIONS
-	static bool Login();
-	static bool Logout();
-	static bool Register();
+	bool Login();
+	bool Logout();
+	bool Register();
 
 
 	// POST LOGIN FUNCTIONS

@@ -36,8 +36,8 @@ bool System::Register()
 
 bool System::IsLoggedIn()
 {
-	if (current == nullptr) {
-		return false;
-	}
+	//if (current == nullptr) {
+		//return false;
+	//}
 	return true;
 }

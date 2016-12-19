@@ -1,5 +1,10 @@
 #include <iostream>
 #include "System.h"
+
+System sys;
+void demo();
+void initialize();
+
 int main()
 {
 	//cout << "Hello World" << endl;
@@ -10,19 +15,18 @@ int main()
 }
 
 void initialize() {
-
+	sys = System();
 }
-
 void demo() {
-	System::Register();
-	System::current;
-	//sys.Register();
+	//System::Register();
+	//System::current;
+	sys.Register();
 
-	//sys.Login();
+	sys.Login();
 	//std::cout << sys.current;
 
 	//sys.WriteMail();
 
-	//sys.Logout();
+	sys.Logout();
 	//std::cout << sys.current;
 }
