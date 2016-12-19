@@ -18,7 +18,7 @@ bool isloggedin = false;
 int choice;
 int menuchoice;
 int takeinput();
-void showloginmenu();
+int showloginmenu();
 void showmainmenu();
 
 int main()
@@ -48,7 +48,7 @@ void initializeMenus()
 	menuvector.push_back(login);
 
 	MenuOptions mainmenu("Main Menu");
-	std::array<std::string, 6> mainmenuitems = { "Create Email", "Delete Email", "View Emails", "Search By", "Delete All", "Exit" };
+	std::array<std::string, 6> mainmenuitems = { "Create Email", "Send Email", "View Emails", "Search By", "Delete All", "Exit" };
 	for (auto s : mainmenuitems)
 	{
 		mainmenu.add(s);
@@ -59,13 +59,13 @@ void runmenu()
 {
 	do{
 		if (isloggedin == false)
-			showloginmenu();
+			menuchoice = showloginmenu();
 
 		else if (isloggedin == true)
 			showmainmenu();	
 		
-	}while (menuchoice != menuvector.size());
-	std::cout << "Exiting..." << std::endl;
+	}while (menuchoice != -1);
+	std::cout << "Exiting run menu..." << std::endl;
 	
 }
 void demo() {
@@ -124,7 +124,7 @@ int takeinput()
 	return choice;
 }
 
-void showloginmenu()
+int showloginmenu()
 {
 	MenuOptions loginmenu = menuvector[0];
 	loginmenu.showMenu();
@@ -137,27 +137,32 @@ void showloginmenu()
 
 	else if (menuchoice == 1)
 	{
-		isloggedin = true;
 		//dologin
+		if (sys.Login())
+			isloggedin = true;
+
 		runmenu();
 	}
 	else if (menuchoice == 2)
 	{
 		std::cout << "Registering.." << std::endl;
 		//doregister
+		sys.Register();
 		runmenu();
 	}
 	else if (menuchoice == 3)
 	{
 		std::cout << "Resetting.." << std::endl;
 		//doreset
+		//sys.Reset();    --Write Reset Function in System class
 		runmenu();
 	}
 	else if (menuchoice == 4)
 	{
 		std::cout << "Exitting.." << std::endl;
+		
 	}
-
+	return -1;
 }
 
 void showmainmenu()
@@ -175,6 +180,7 @@ void showmainmenu()
 	{
 		//create email
 		std::cout << "Creating email..." << std::endl;
+		sys.WriteMail();
 		runmenu();
 	}
 	else if (menuchoice == 2)
@@ -186,13 +192,15 @@ void showmainmenu()
 	else if (menuchoice == 3)
 	{
 		//view email
-		std::cout << "Viewing emails..." << std::endl;
+		std::cout << "Printing emails..." << std::endl;
+		sys.printUserEmails();
 		runmenu();
 	}
 	else if (menuchoice == 4)
 	{
 		//Search by
-		std::cout << "Search By..." << std::endl;
+		std::cout << "Printing DB..." << std::endl;
+		sys.printDB();
 		runmenu();
 	}
 	else if (menuchoice == 5)
@@ -205,6 +213,8 @@ void showmainmenu()
 	{
 		//Exit
 		std::cout << "Exiting..." << std::endl;
+		sys.Logout();
+		isloggedin = false;
 		runmenu();
 	}
 
