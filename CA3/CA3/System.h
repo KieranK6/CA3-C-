@@ -16,7 +16,7 @@ public:
 	~System();
 
 	static User *current;
-	static std::list<User> db;
+	static Database db;
 
 	// SYSTEM FUNCTIONS
 	static bool Login();
