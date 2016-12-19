@@ -1,3 +1,17 @@
-﻿  Main.cpp
-  CA3.vcxproj -> C:\Users\Kieran\Desktop\CA3\CA3\Debug\CA3.exe
-  CA3.vcxproj -> C:\Users\Kieran\Desktop\CA3\CA3\Debug\CA3.pdb (Partial PDB)
+﻿  User.cpp
+  System.cpp
+c:\users\kieran\desktop\ca3\ca3\ca3\system.h(35): warning C4091: 'static ': ignored on left of 'System' when no variable is declared
+  MenuOptions.cpp
+  Main.cpp
+c:\users\kieran\desktop\ca3\ca3\ca3\system.h(35): warning C4091: 'static ': ignored on left of 'System' when no variable is declared
+c:\users\kieran\desktop\ca3\ca3\ca3\main.cpp(7): error C3861: 'initialize': identifier not found
+c:\users\kieran\desktop\ca3\ca3\ca3\main.cpp(8): error C3861: 'demo': identifier not found
+  Email.cpp
+c:\users\kieran\desktop\ca3\ca3\ca3\email.cpp(9): error C3861: 'getCurrentTime': identifier not found
+c:\users\kieran\desktop\ca3\ca3\ca3\email.cpp(16): error C3861: 'getCurrentTime': identifier not found
+c:\users\kieran\desktop\ca3\ca3\ca3\email.cpp(28): error C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\time.h(505): note: see declaration of 'localtime'
+  Attachment.cpp
+  Generating Code...
+c:\users\kieran\desktop\ca3\ca3\ca3\menuoptions.cpp(26): error C4716: 'MenuOptions::add': must return a value
+c:\users\kieran\desktop\ca3\ca3\ca3\menuoptions.cpp(21): error C4716: 'MenuOptions::showMenuGetChoice': must return a value

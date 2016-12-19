@@ -1,3 +1,9 @@
+/**
+*	Version: 1.0
+*	Author: Kieran
+*	Description: Adapted Niall's MenuOptions from java into c++
+**/
+
 #pragma once
 #include <iostream>
 #include <list>

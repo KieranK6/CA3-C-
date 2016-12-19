@@ -1,3 +1,9 @@
+/**
+*	Version: 1.0
+*	Author: Kieran
+*	Description: User class, has an email, password and username
+**/
+
 #pragma once
 #include <iostream>
 class User

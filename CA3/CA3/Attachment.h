@@ -1,3 +1,9 @@
+/**
+*	Version: 1.0
+*	Author: Kieran
+*	Description: To send data with an email
+**/
+
 #pragma once
 #include <iostream>
 

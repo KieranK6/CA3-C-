@@ -1,3 +1,9 @@
+/**
+*	Version: 1.0
+*	Author: Kieran
+*	Description: Email class, can attach data as attachment
+**/
+
 #pragma once
 #include <iostream>
 #include "Attachment.h"
