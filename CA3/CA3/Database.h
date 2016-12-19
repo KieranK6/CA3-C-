@@ -18,6 +18,7 @@ public:
 
 	bool WriteUser(std::string user, std::string password);
 	bool WriteEmail(std::string user, std::string recipient, std::string message);
+	bool WriteEmail(Email e);
 
 	bool Contains(std::string username);
 	User* Get(std::string username);

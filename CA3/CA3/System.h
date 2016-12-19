@@ -29,8 +29,8 @@ public:
 	// POST LOGIN FUNCTIONS
 	bool IsLoggedIn();
 	// below funcs call above func to make sure user is logged in
-	bool Send(Email email, User recipient);
-	bool WriteMail();
+	bool CreateMail();
+	bool SendMail();
 	bool Search();
 
 	// DEBUG FUNCTIONS

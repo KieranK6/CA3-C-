@@ -89,7 +89,7 @@ void demo() {
 		// nobodys logged in
 	}
 
-	sys.WriteMail();
+	sys.CreateMail();
 
 	sys.Logout();
 }
@@ -180,13 +180,14 @@ void showmainmenu()
 	{
 		//create email
 		std::cout << "Creating email..." << std::endl;
-		sys.WriteMail();
+		sys.CreateMail();
 		runmenu();
 	}
 	else if (menuchoice == 2)
 	{
 		//send email
 		std::cout << "Sending email..." << std::endl;
+		sys.SendMail();
 		runmenu();
 	}
 	else if (menuchoice == 3)

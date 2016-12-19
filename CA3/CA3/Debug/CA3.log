@@ -1,6 +1,5 @@
-﻿  Main.cpp
-c:\users\kieran\desktop\ca3\ca3\ca3\system.h(41): warning C4091: 'static ': ignored on left of 'System' when no variable is declared
-c:\users\kieran\desktop\ca3\ca3\ca3\main.cpp(133): warning C4018: '>': signed/unsigned mismatch
-c:\users\kieran\desktop\ca3\ca3\ca3\main.cpp(173): warning C4018: '>': signed/unsigned mismatch
-  CA3.vcxproj -> C:\Users\Kieran\Desktop\CA3\CA3\Debug\CA3.exe
-  CA3.vcxproj -> C:\Users\Kieran\Desktop\CA3\CA3\Debug\CA3.pdb (Partial PDB)
+﻿  Database.cpp
+c:\users\ciara_000\ca3-c-\ca3\ca3\database.cpp(34): warning C4715: 'Database::ReadUsers': not all control paths return a value
+c:\users\ciara_000\ca3-c-\ca3\ca3\database.cpp(66): warning C4715: 'Database::ReadEmails': not all control paths return a value
+  CA3.vcxproj -> C:\Users\ciara_000\CA3-C-\CA3\Debug\CA3.exe
+  CA3.vcxproj -> C:\Users\ciara_000\CA3-C-\CA3\Debug\CA3.pdb (Partial PDB)
