@@ -20,6 +20,7 @@ int menuchoice;
 int takeinput();
 int showloginmenu();
 void showmainmenu();
+void showsearchmenu();
 
 int main()
 {
@@ -54,6 +55,14 @@ void initializeMenus()
 		mainmenu.add(s);
 	}
 	menuvector.push_back(mainmenu);
+
+	MenuOptions searchbymenu("Search Menu");
+	std::array<std::string, 4> searchbymenuitems = { "Date Range", "Subject", "Username",  "Exit" };
+	for (auto s : searchbymenuitems)
+	{
+		searchbymenu.add(s);
+	}
+	menuvector.push_back(searchbymenu);
 }
 void runmenu()
 {
@@ -191,7 +200,7 @@ void showmainmenu()
 	}
 	else if (menuchoice == 3)
 	{
-		//view email
+		//view emails
 		std::cout << "Printing emails..." << std::endl;
 		sys.printUserEmails();
 		runmenu();
@@ -199,9 +208,9 @@ void showmainmenu()
 	else if (menuchoice == 4)
 	{
 		//Search by
-		std::cout << "Printing DB..." << std::endl;
-		sys.printDB();
-		runmenu();
+		//std::cout << "Printing DB..." << std::endl;
+		//sys.printDB();
+		showsearchmenu();
 	}
 	else if (menuchoice == 5)
 	{
@@ -218,4 +227,44 @@ void showmainmenu()
 		runmenu();
 	}
 
+}
+
+void showsearchmenu()
+{
+	MenuOptions searchmenu = menuvector[2];
+	searchmenu.showMenu();
+	menuchoice = takeinput();
+
+	if (menuchoice < 0 || menuchoice > searchmenu.mList.size())
+	{
+		std::cout << "Please enter a valid option!" << std::endl;
+	}
+
+	else if (menuchoice == 1)
+	{
+		//Array of functions   Date filter
+		std::cout << "Date Filter!" << std::endl;
+		showsearchmenu();
+	}
+
+	else if (menuchoice == 2)
+	{
+		//Array of functions   Subject filter
+		std::cout << "Subject Filter!" << std::endl;
+		showsearchmenu();
+	}
+
+	else if (menuchoice == 3)
+	{
+		//Array of functions   username filter
+		std::cout << "Username Filter!" << std::endl;
+		showsearchmenu();
+	}
+
+	else if (menuchoice == 4)
+	{
+		//Exit
+		std::cout << "Exiting..." << std::endl;
+		runmenu();
+	}
 }

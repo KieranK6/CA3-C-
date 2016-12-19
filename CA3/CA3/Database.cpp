@@ -131,7 +131,7 @@ void Database::Print()
 {
 	std::cout << "users:\n";
 	for (std::string s : userList) {
-		std::cout << s;
+		std::cout << s << std::endl;
 	}
 	std::cout << "emails:\n";
 	//for (Email e : emailList) {
