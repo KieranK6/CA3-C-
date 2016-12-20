@@ -11,22 +11,22 @@ Email::Email() : sender("Def_Sender"), recipient("Def_Recipient"), subject("Def 
 
 }
 
-Email::Email(std::string Sender, std::string Recipient, std::string Subject, std::string Body, Attachment attachment, tm time) : sender(Sender), recipient(Recipient), Subject(Subject), Body(Body),  attachment(attachment), Tm(time)
+Email::Email(std::string Sender, std::string Recipient, std::string Subject, std::string Body, Attachment attachment, tm time) : sender(Sender), recipient(Recipient), subject(Subject), body(Body),  attachment(attachment), Tm(time)
 {
 }
 
 Email::Email(std::string Sender, std::string Recipient, std::string Subject, std::string Body, Attachment attach)
-	: sender(Sender), recipient(Recipient), Subject(Subject), Body(Body)
+	: sender(Sender), recipient(Recipient), subject(Subject), body(Body)
 {
 	Tm = getCurrentTime();
 	attachment = attach;
 }
 
-Email::Email(std::string Sender, std::string Recipient, std::string Subject, std::string Body, tm time) : sender(Sender), recipient(Recipient), Subject(Subject), Body(Body), Tm(time)
+Email::Email(std::string Sender, std::string Recipient, std::string Subject, std::string Body, tm time) : sender(Sender), recipient(Recipient), subject(Subject), body(Body), Tm(time)
 {
 }
 
-Email::Email(std::string Sender, std::string Recipient, std::string Subject, std::string Body) : sender(Sender), recipient(Recipient), Subject(Subject), Body(Body)
+Email::Email(std::string Sender, std::string Recipient, std::string Subject, std::string Body) : sender(Sender), recipient(Recipient), subject(Subject), body(Body)
 {
 	Tm = getCurrentTime();
 }
@@ -76,10 +76,10 @@ void Email::print()
 	char buffer[80];
 	strftime(buffer, 80, "%d/%m/%Y", time);
 	if (attachment.FileName != "Def_FileName") {
-		std::cout << sender + ":" + recipient + ":" + Subject + ":" + Body + ":" << buffer << ":" + attachment.FileName+attachment.FilePath + "\n";
+		std::cout << sender + ":" + recipient + ":" + subject + ":" + body + ":" << buffer << ":" + attachment.FileName+attachment.FilePath + "\n";
 	}
 	else {
-		std::cout << sender + ":" + recipient + ":" + Subject + ":" + Body + ":" << buffer << "\n";
+		std::cout << sender + ":" + recipient + ":" + subject + ":" + body + ":" << buffer << "\n";
 	}
 }
 

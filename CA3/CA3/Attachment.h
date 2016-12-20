@@ -32,8 +32,6 @@ public:
 	friend std::istream &operator >> (std::istream& input, Attachment rhs);
 
 	void print();
-
-private:
 	std::string FileName, FilePath;
 	char FileData;
 private:

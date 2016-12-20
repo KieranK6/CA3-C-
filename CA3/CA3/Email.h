@@ -45,6 +45,7 @@ public:
 
 	void print();
 	Attachment attachment;
+	tm Tm;
 private:
 	
 	

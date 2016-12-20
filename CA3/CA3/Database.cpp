@@ -132,8 +132,8 @@ bool Database::WriteEmail(Email e)
 
 		myfile << e.sender;
 		myfile << ":" + e.recipient;
-		myfile << "-" + e.Subject;
-		myfile << "," + e.Body;
+		myfile << "-" + e.subject;
+		myfile << "," + e.body;
 		myfile << "@" << buffer;
 
 		if (e.attachment.FileName != "Def_FileName") {
