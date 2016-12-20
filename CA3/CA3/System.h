@@ -36,6 +36,7 @@ public:
 	bool SubjectFilter();
 	bool DateFilter();
 	bool UsernameFilter();
+	bool deleteAll();
 
 	// DEBUG FUNCTIONS
 	void printDB();

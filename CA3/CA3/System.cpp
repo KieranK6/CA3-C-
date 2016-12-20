@@ -171,6 +171,10 @@ bool System::UsernameFilter()
 		return true;
 	}
 }
+bool System::deleteAll()
+{
+	return db.deleteEmails();
+}
 void System::printDB()
 {
 	db.Print();
