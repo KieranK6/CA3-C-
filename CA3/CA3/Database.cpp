@@ -127,7 +127,7 @@ bool Database::WriteEmail(Email e)
 	{
 		myfile << e.sender;
 		myfile << ":" + e.recipient;
-		myfile << ":" + e.Body + "\n";
+		myfile << ":" + e.body + "\n";
 		myfile.close();
 		std::cout << "Email created!\n";
 		emails.push_back(e);
@@ -136,7 +136,7 @@ bool Database::WriteEmail(Email e)
 		userPtr = &userMap.at(e.sender);
 		userPtr->emails.push_back(*&e);
 
-		if (Contains(e.Recipient)) {
+		if (Contains(e.recipient)) {
 			userPtr = &userMap.at(e.recipient);
 			userPtr->emails.push_back(*&e);
 		}
