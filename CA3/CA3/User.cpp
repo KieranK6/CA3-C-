@@ -19,8 +19,6 @@ User::User(std::string username, std::string password) : id(count), username(use
 
 User::~User()
 {
-	delete currentEmail;
-	currentEmail = nullptr;
 	count--;
 }
 
@@ -46,6 +44,12 @@ bool User::operator=(User rhs)
 	return true;
 }
 
+void User::reset()
+{
+	delete currentEmail;
+	currentEmail = nullptr;
+}
+
 std::ostream & operator<<(std::ostream & outstream, User rhs)
 {
 	return outstream << rhs.getusername();
@@ -56,3 +60,4 @@ std::istream & operator >> (std::istream & input, User rhs)
 	input >> rhs.username >> rhs.password;
 	return input;
 }
+

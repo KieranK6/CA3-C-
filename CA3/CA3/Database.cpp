@@ -164,7 +164,19 @@ bool Database::deleteEmails()
 	std::ofstream ofs;
 	ofs.open(name + email, std::ofstream::out | std::ofstream::trunc);
 	ofs.close();
+	emails.clear();
 	return false;
+}
+
+bool Database::deleteUsers()
+{
+	std::ofstream ofs;
+	ofs.open(name + user, std::ofstream::out | std::ofstream::trunc);
+	ofs.close();
+	userList.clear();
+	userMap.clear();
+	return false;
+
 }
 
 bool Database::Contains(std::string username)

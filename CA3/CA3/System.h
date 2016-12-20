@@ -37,10 +37,9 @@ public:
 	bool DateFilter();
 	bool UsernameFilter();
 	bool deleteAll();
-
+	bool reset();
 	// DEBUG FUNCTIONS
 	void printDB();
 	void printUserEmails();
-
 private:
 };

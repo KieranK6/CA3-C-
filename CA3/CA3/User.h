@@ -35,6 +35,8 @@ public:
 	friend std::ostream& operator<<(std::ostream& outstream, User rhs);
 	friend std::istream &operator >> (std::istream& input, User rhs);
 
+	void reset();
+
 private:
 	int id;
 	std::string password;

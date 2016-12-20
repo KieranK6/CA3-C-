@@ -21,6 +21,7 @@ public:
 	bool WriteEmail(Email e);
 
 	bool deleteEmails();
+	bool deleteUsers();
 
 	bool Contains(std::string username);
 	User* Get(std::string username);
@@ -36,7 +37,6 @@ private:
 
 	std::vector<Email> emails;
 
-	void build();
 	User parseUser(std::string line);
 	Email parseEmail(std::string line);
 	Email* GetEmailPointer(Email e);

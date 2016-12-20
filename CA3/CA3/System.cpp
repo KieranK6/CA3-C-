@@ -38,6 +38,7 @@ bool System::Login()
 bool System::Logout()
 {
 	if (current != nullptr) {
+		current->reset();
 		current = nullptr;
 		std::cout << "Logged out!\n";
 		return true;
@@ -198,6 +199,14 @@ bool System::deleteAll()
 {
 	return db.deleteEmails();
 }
+
+bool System::reset()
+{
+	db.deleteEmails();
+	db.deleteUsers();
+	Logout();
+}
+
 void System::printDB()
 {
 	db.Print();
