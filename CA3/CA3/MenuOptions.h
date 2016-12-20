@@ -20,6 +20,8 @@ public:
 
 	std::list<std::string> mList;
 
+	
+
 	void showMenu();
 	bool add(std::string s);
 	bool addAll(std::array<std::string, 4>, int size);
@@ -33,6 +35,8 @@ public:
 
 	int getIndexOfExitOption() { return indexOfExitOption; }
 	void setName(int newIndex) { indexOfExitOption = newIndex; }
+
+	void print();
 
 private:
 	const std::string MenuHeaderBorder = " *************************** ";

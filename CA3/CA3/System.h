@@ -33,6 +33,11 @@ public:
 	bool SendMail();
 	bool Search();
 
+	bool SubjectFilter();
+	bool DateFilter();
+	bool UsernameFilter();
+	bool deleteAll();
+
 	// DEBUG FUNCTIONS
 	void printDB();
 	void printUserEmails();

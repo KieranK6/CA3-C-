@@ -20,6 +20,8 @@ public:
 	bool WriteEmail(std::string user, std::string recipient, std::string message);
 	bool WriteEmail(Email e);
 
+	bool deleteEmails();
+
 	bool Contains(std::string username);
 	User* Get(std::string username);
 	void Print();

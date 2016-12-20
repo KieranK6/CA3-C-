@@ -2,7 +2,7 @@
 
 tm getCurrentTime();
 
-Email::Email() : sender("Def_Sender"), recipient("Def_Recipient"), Subject("Def _Subject"), Body("Def_Body")
+Email::Email() : sender("Def_Sender"), recipient("Def_Recipient"), subject("Def _Subject"), body("Def_Body")
 {
 	Attachment a1;
 	attachment = a1;
@@ -38,8 +38,36 @@ Email::~Email()
 
 bool Email::operator==(Email rhs)
 {
-	return(sender == rhs.sender && recipient == rhs.recipient && Body == rhs.Body);
+	return(sender == rhs.sender && recipient == rhs.recipient && body == rhs.body);
 }
+
+bool Email::operator!=(Email rhs)
+{
+	return !(operator==(rhs));
+}
+
+bool Email::operator=(Email rhs)
+{
+	sender = rhs.getsender();
+	recipient = rhs.getrecipient();
+	subject = rhs.getsubject();
+	body = rhs.getbody();
+	attachment = rhs.attachment;
+	Tm = rhs.Tm;
+	return true;
+}
+
+std::ostream & operator<<(std::ostream & outstream, Email rhs)
+{
+	return outstream << rhs.getsender() << ", " << rhs.getrecipient() << ", " << rhs.getsubject();
+}
+
+std::istream & operator >> (std::istream & input, Email rhs)
+{
+	input >> rhs.sender >> rhs.recipient >> rhs.subject >> rhs.body;
+	return input;
+}
+
 
 void Email::print()
 {
@@ -61,3 +89,5 @@ tm getCurrentTime()
 	tm *Tm = localtime(&now);
 	return *Tm;
 }
+
+

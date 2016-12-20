@@ -158,6 +158,15 @@ bool Database::WriteEmail(Email e)
 	else return false;
 }
 
+bool Database::deleteEmails()
+{
+	//opening with truncate options and then closing clears the file data
+	std::ofstream ofs;
+	ofs.open(name + email, std::ofstream::out | std::ofstream::trunc);
+	ofs.close();
+	return false;
+}
+
 bool Database::Contains(std::string username)
 {
 	return(std::find(userList.begin(), userList.end(), username) != userList.end());
@@ -178,9 +187,9 @@ void Database::Print()
 		std::cout << s << std::endl;
 	}
 	std::cout << "emails:\n";
-	//for (Email e : emailList) {
-	//	e.print();
-	//}
+	for (Email e : emails) {
+		e.print();
+	}
 }
 
 User Database::parseUser(std::string line)
