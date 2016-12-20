@@ -136,7 +136,7 @@ bool Database::WriteEmail(Email e)
 		userPtr = &userMap.at(e.sender);
 		userPtr->emails.push_back(*&e);
 
-		if (Contains(e.recipient)) {
+		if (Contains(e.Recipient)) {
 			userPtr = &userMap.at(e.recipient);
 			userPtr->emails.push_back(*&e);
 		}

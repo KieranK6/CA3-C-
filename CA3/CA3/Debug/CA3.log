@@ -1,5 +1,2 @@
-﻿  Database.cpp
-c:\users\kieran\desktop\ca3\ca3\ca3\database.cpp(66): warning C4715: 'Database::ReadEmails': not all control paths return a value
-c:\users\kieran\desktop\ca3\ca3\ca3\database.cpp(34): warning C4715: 'Database::ReadUsers': not all control paths return a value
-  CA3.vcxproj -> C:\Users\Kieran\Desktop\CA3\CA3\Debug\CA3.exe
+﻿  CA3.vcxproj -> C:\Users\Kieran\Desktop\CA3\CA3\Debug\CA3.exe
   CA3.vcxproj -> C:\Users\Kieran\Desktop\CA3\CA3\Debug\CA3.pdb (Partial PDB)

@@ -14,6 +14,17 @@ public:
 	Attachment(std::string FileName, std::string FilePath, char FileData);
 	~Attachment();
 
+	void setFileName(std::string newFileName) { FileName = newFileName; }
+	std::string getFileNameh() { return FileName; }
+
+	void setFilePath(std::string newFilePath) { FilePath = newFilePath; }
+	std::string getFilePath() { return FilePath; }
+
+	void setFileData(char newFileData) { FileData = newFileData; }
+	char getFileData() { return FileData; }
+
+	
+
 private:
 	std::string FileName, FilePath;
 	char FileData;

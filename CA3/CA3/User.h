@@ -17,6 +17,14 @@ public:
 	User(std::string username, std::string password);
 	~User();
 
+	void setusername(std::string newusername) { username = newusername; }
+	std::string getusername() { return username; }
+
+	void setpassword(std::string newpassword) { password = newpassword; }
+	std::string getpassword() { return password; }
+
+	
+
 	std::string username;
 	std::list<Email> emails;
 	Email* currentEmail;

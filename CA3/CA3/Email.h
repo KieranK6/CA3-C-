@@ -18,7 +18,19 @@ public:
 	Email(std::string Sender, std::string Recipient, std::string Subject, std::string Body);
 	~Email();
 
-	std::string sender, recipient, Subject, Body;
+	void setsender(std::string newsender) { sender = newsender; }
+	std::string getsender() { return sender; }
+
+	void setrecipient(std::string newrecipient) { recipient = newrecipient; }
+	std::string getrecipient() { return recipient; }
+
+	void setsubject(std::string newsubject) { subject = newsubject; }
+	std::string getsubject() { return subject; }
+
+	void setbody(std::string newbody) { body = newbody; }
+	std::string getbody() { return body; }
+
+	std::string sender, recipient, subject, body;
 
 	bool operator==(Email rhs);
 
