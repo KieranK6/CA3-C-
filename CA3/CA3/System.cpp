@@ -37,9 +37,6 @@ bool System::Login()
 
 bool System::Logout()
 {
-	// if somebody is logged in
-	// currentuser = nullptr; return true
-	// else false
 	if (current != nullptr) {
 		current = nullptr;
 		std::cout << "Logged out!\n";
@@ -79,7 +76,7 @@ bool System::CreateMail()
 	std::cout << "Enter recipient:\n";
 	std::cin >> recipient;
 	std::cout << "Enter message:\n";
-	std::cin >> message;
+	std::getline(std::cin, message);
 	current->currentEmail = new Email(current->username, recipient, "subject", message);
 	return true;
 }
