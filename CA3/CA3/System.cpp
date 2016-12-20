@@ -93,6 +93,84 @@ bool System::SendMail()
 		return true;
 	}
 }
+bool System::SubjectFilter()
+{
+	std::cout << "Enter Subject to filter by" << std::endl;
+	std::list<Email> returnList;
+	std::string filterby;
+	std::cin >> filterby;
+	for (auto e : current->emails)
+	{
+		if (e.getsubject() == filterby)
+			returnList.push_back(e);
+	}
+
+	if (returnList.size() == 0)
+	{
+		std::cout << "No emails found with that subject!" << std::endl;
+		return false;
+	}
+	else
+	{
+		for (auto r : returnList)
+		{
+			std::cout << r << std::endl;
+		}
+		return true;
+	}
+}
+bool System::DateFilter()
+{
+	std::cout << "Enter Date to filter by (DD/MM/YYYY)" << std::endl;
+	std::list<Email> returnList;
+	std::string filterby;
+	std::cin >> filterby;
+	for (auto e : current->emails)
+	{
+		//if (e.tm == filterby)
+			//returnList.push_back(e);
+	}
+
+	if (returnList.size() == 0)
+	{
+		std::cout << "No emails found on that date!" << std::endl;
+		return false;
+	}
+	else
+	{
+		for (auto r : returnList)
+		{
+			std::cout << r << std::endl;
+		}
+		return true;
+	}
+}
+bool System::UsernameFilter()
+{
+	std::cout << "Enter Username to filter by (Inbox)" << std::endl;
+	std::list<Email> returnList;
+	std::string filterby;
+	std::cin >> filterby;
+	for (auto e : current->emails)
+	{
+		if (e.getrecipient() == filterby)
+			returnList.push_back(e);
+	}
+
+	if (returnList.size() == 0)
+	{
+		std::cout << "No emails found for that username!" << std::endl;
+		return false;
+	}
+	else
+	{
+		for (auto r : returnList)
+		{
+			std::cout << r << std::endl;
+		}
+		return true;
+	}
+}
 void System::printDB()
 {
 	db.Print();

@@ -1,11 +1,11 @@
-﻿  User.cpp
-  System.cpp
-c:\users\kieran\desktop\ca3\ca3\ca3\system.h(41): warning C4091: 'static ': ignored on left of 'System' when no variable is declared
-  MenuOptions.cpp
+﻿  System.cpp
+c:\users\kieran\desktop\ca3\ca3\ca3\system.h(45): warning C4091: 'static ': ignored on left of 'System' when no variable is declared
+  Main.cpp
+c:\users\kieran\desktop\ca3\ca3\ca3\system.h(45): warning C4091: 'static ': ignored on left of 'System' when no variable is declared
+c:\users\kieran\desktop\ca3\ca3\ca3\main.cpp(142): warning C4018: '>': signed/unsigned mismatch
+c:\users\kieran\desktop\ca3\ca3\ca3\main.cpp(183): warning C4018: '>': signed/unsigned mismatch
+c:\users\kieran\desktop\ca3\ca3\ca3\main.cpp(239): warning C4018: '>': signed/unsigned mismatch
   Generating Code...
 c:\users\kieran\desktop\ca3\ca3\ca3\system.cpp(95): warning C4715: 'System::SendMail': not all control paths return a value
-  Skipping... (no relevant changes detected)
-  Main.cpp
-  Database.cpp
   CA3.vcxproj -> C:\Users\Kieran\Desktop\CA3\CA3\Debug\CA3.exe
   CA3.vcxproj -> C:\Users\Kieran\Desktop\CA3\CA3\Debug\CA3.pdb (Partial PDB)

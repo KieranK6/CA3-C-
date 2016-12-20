@@ -202,8 +202,8 @@ void showmainmenu()
 	else if (menuchoice == 3)
 	{
 		//view emails
-		std::cout << "Printing emails..." << std::endl;
-		sys.printUserEmails();
+		std::cout << "View emails..." << std::endl;
+		sys.UsernameFilter();
 		runmenu();
 	}
 	else if (menuchoice == 4)
@@ -245,6 +245,7 @@ void showsearchmenu()
 	{
 		//Array of functions   Date filter
 		std::cout << "Date Filter!" << std::endl;
+		sys.DateFilter();
 		showsearchmenu();
 	}
 
@@ -252,6 +253,7 @@ void showsearchmenu()
 	{
 		//Array of functions   Subject filter
 		std::cout << "Subject Filter!" << std::endl;
+		sys.SubjectFilter();
 		showsearchmenu();
 	}
 
@@ -259,6 +261,7 @@ void showsearchmenu()
 	{
 		//Array of functions   username filter
 		std::cout << "Username Filter!" << std::endl;
+		sys.UsernameFilter();
 		showsearchmenu();
 	}
 
