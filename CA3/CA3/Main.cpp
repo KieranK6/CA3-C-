@@ -50,7 +50,7 @@ void initializeMenus()
 	menuvector.push_back(mainmenu);
 
 	MenuOptions searchbymenu("Search Menu");
-	std::array<std::string, 4> searchbymenuitems = { "Date Range", "Subject", "Username",  "Exit" };
+	std::array<std::string, 4> searchbymenuitems = { "Username", "Subject", "Attachment",  "Exit" };
 	for (auto s : searchbymenuitems)
 	{
 		searchbymenu.add(s);
@@ -109,7 +109,7 @@ int showloginmenu()
 	{
 		std::cout << "Resetting.." << std::endl;
 		//doreset
-		//sys.Reset();    --Write Reset Function in System class
+		sys.reset();   
 		runmenu();
 	}
 	else if (menuchoice == 4)
@@ -189,8 +189,8 @@ void showsearchmenu()
 	else if (menuchoice == 1)
 	{
 		//Array of functions   Date filter
-		std::cout << "Date Filter!" << std::endl;
-		sys.DateFilter();
+		std::cout << "Username Filter!" << std::endl;
+		sys.UsernameFilter();
 		showsearchmenu();
 	}
 
@@ -205,8 +205,8 @@ void showsearchmenu()
 	else if (menuchoice == 3)
 	{
 		//Array of functions   username filter
-		std::cout << "Username Filter!" << std::endl;
-		sys.UsernameFilter();
+		std::cout << "Attachment Filter!" << std::endl;
+		sys.AttachmentFilter();
 		showsearchmenu();
 	}
 

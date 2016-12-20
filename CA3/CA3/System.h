@@ -34,7 +34,7 @@ public:
 	bool Search();
 
 	bool SubjectFilter();
-	bool DateFilter();
+	bool AttachmentFilter();
 	bool UsernameFilter();
 	bool deleteAll();
 	bool reset();

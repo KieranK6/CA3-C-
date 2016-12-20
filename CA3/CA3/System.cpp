@@ -143,21 +143,21 @@ bool System::SubjectFilter()
 		return true;
 	}
 }
-bool System::DateFilter()
+bool System::AttachmentFilter()
 {
-	std::cout << "Enter Date to filter by (DD/MM/YYYY)" << std::endl;
+	std::cout << "Enter Attachment FileName" << std::endl;
 	std::list<Email> returnList;
 	std::string filterby;
 	std::cin >> filterby;
 	for (auto e : current->emails)
 	{
-		//if (e.tm == filterby)
-			//returnList.push_back(e);
+		if (e.attachment.FileName == filterby)
+			returnList.push_back(e);
 	}
 
 	if (returnList.size() == 0)
 	{
-		std::cout << "No emails found on that date!" << std::endl;
+		std::cout << "No emails found with that Attachment!" << std::endl;
 		return false;
 	}
 	else
@@ -204,7 +204,7 @@ bool System::reset()
 {
 	db.deleteEmails();
 	db.deleteUsers();
-	Logout();
+	return Logout();
 }
 
 void System::printDB()
