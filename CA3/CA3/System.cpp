@@ -70,14 +70,37 @@ bool System::IsLoggedIn()
 
 bool System::CreateMail()
 {
+	std::string subject;
 	std::string recipient;
 	std::string message;
+	std::string attachment;
 
 	std::cout << "Enter recipient:\n";
 	std::cin >> recipient;
+
+	std::cout << "Enter subject:\n";
+	std::cin >> subject;
+
 	std::cout << "Enter message:\n";
-	std::getline(std::cin, message);
-	current->currentEmail = new Email(current->username, recipient, "subject", message);
+	std::cin >> message;
+
+	std::string choice;
+	std::cout << "Would you like to add an attachment? y/n\n";
+	std::cin >> choice;
+
+	if (choice == "y") {
+		std::string name, path;
+
+		std::cout << "Enter attachment name:\n";
+		std::cin >> name;
+		std::cout << "Enter attachment path:\n";
+		std::cin >> path;
+		Attachment at = Attachment(name, path, 'data');
+		current->currentEmail = new Email(current->username, recipient, subject, message, at);
+	}
+	else {
+		current->currentEmail = new Email(current->username, recipient, subject, message);
+	}
 	return true;
 }
 

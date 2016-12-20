@@ -12,10 +12,12 @@ class Attachment
 public:
 	Attachment();
 	Attachment(std::string FileName, std::string FilePath, char FileData);
+	Attachment(std::string FilePath);
 	~Attachment();
 
-private:
 	std::string FileName, FilePath;
 	char FileData;
+private:
+	
 };
 

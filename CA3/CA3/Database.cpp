@@ -125,9 +125,21 @@ bool Database::WriteEmail(Email e)
 	std::ofstream myfile(name + email, std::ios_base::app);
 	if (myfile.is_open())
 	{
+		tm *time;
+		time = &e.Tm;
+		char buffer[80];
+		strftime(buffer, 80, "%d/%m/%Y", time);
+
 		myfile << e.sender;
 		myfile << ":" + e.recipient;
-		myfile << ":" + e.Body + "\n";
+		myfile << "-" + e.Subject;
+		myfile << "," + e.Body;
+		myfile << "@" << buffer;
+
+		if (e.attachment.FileName != "Def_FileName") {
+			myfile << ">" << e.attachment.FilePath << e.attachment.FileName;
+		}
+		myfile << "\n";
 		myfile.close();
 		std::cout << "Email created!\n";
 		emails.push_back(e);
@@ -186,19 +198,40 @@ User Database::parseUser(std::string line)
 
 Email Database::parseEmail(std::string line)
 {
-	size_t delimPos;
 	size_t start = 0;
-	size_t endDelimPos;
+	size_t recipDelimPos;
+	size_t subjDelimPos;
+	size_t bodyDelimPos;
+	size_t timeDelimPos;
+	size_t attachDelimPos;
+
 	std::string delimiter = ":";
+	std::string subjectDelimiter = "-";
+	std::string bodyDelimiter = ",";
+	std::string timeDelimiter = "@";
+	std::string attachDelimiter = ">";
 
-	delimPos = line.find(delimiter);
-	endDelimPos = line.find_last_of(delimiter);
+	recipDelimPos = line.find(delimiter);
+	subjDelimPos = line.find(subjectDelimiter);
+	bodyDelimPos = line.find(bodyDelimiter);
+	timeDelimPos = line.find(timeDelimiter);
+	attachDelimPos = line.find(attachDelimiter);
 
-	std::string sender = line.substr(0, delimPos);
-	std::string recipient = line.substr(delimPos + 1, endDelimPos - delimPos-1);
-	std::string message = line.substr(endDelimPos + 1, line.length());
+	std::string sender = line.substr(0, recipDelimPos);
+	std::string recipient = line.substr(recipDelimPos + 1, subjDelimPos - recipDelimPos -1);
+	std::string subject = line.substr(subjDelimPos + 1, bodyDelimPos - subjDelimPos - 1);
+	std::string message = line.substr(bodyDelimPos + 1, timeDelimPos - bodyDelimPos - 1);
+	std::string attachment;
+	std::string time;
 
-	return Email(sender, recipient, "subject", message);
+	if (attachDelimPos != std::string::npos) {
+		time = line.substr(timeDelimPos + 1, attachDelimPos - timeDelimPos - 1);
+		attachment = line.substr(attachDelimPos + 1, line.length() - attachDelimPos - 1);
+		Attachment at = Attachment(attachment);
+		return Email(sender, recipient, subject, message, at);
+	}
+	time = line.substr(timeDelimPos + 1, line.length() - timeDelimPos - 1);
+	return Email(sender, recipient, subject, message);
 }
 
 Email* Database::GetEmailPointer(Email e) {

@@ -10,6 +10,10 @@ Attachment::Attachment(std::string FileName, std::string FilePath, char FileData
 {
 }
 
+Attachment::Attachment(std::string FilePath) : FileName(""), FilePath(FilePath), FileData(1)
+{
+}
+
 Attachment::~Attachment()
 {
 }
