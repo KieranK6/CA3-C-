@@ -55,3 +55,11 @@ bool MenuOptions::contains(std::string checkstring)
 	return (std::find(mList.begin(), mList.end(), checkstring) != mList.end());
 
 }
+
+void MenuOptions::print()
+{
+	for (auto s : mList)
+	{
+		std::cout << s << std::endl;
+	}
+}

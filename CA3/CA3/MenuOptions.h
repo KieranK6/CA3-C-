@@ -36,6 +36,8 @@ public:
 	int getIndexOfExitOption() { return indexOfExitOption; }
 	void setName(int newIndex) { indexOfExitOption = newIndex; }
 
+	void print();
+
 private:
 	const std::string MenuHeaderBorder = " *************************** ";
 	std::string name;

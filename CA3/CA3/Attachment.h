@@ -6,6 +6,7 @@
 
 #pragma once
 #include <iostream>
+#include <string>
 
 class Attachment
 {
@@ -15,7 +16,7 @@ public:
 	~Attachment();
 
 	void setFileName(std::string newFileName) { FileName = newFileName; }
-	std::string getFileNameh() { return FileName; }
+	std::string getFileName() { return FileName; }
 
 	void setFilePath(std::string newFilePath) { FilePath = newFilePath; }
 	std::string getFilePath() { return FilePath; }
@@ -23,7 +24,13 @@ public:
 	void setFileData(char newFileData) { FileData = newFileData; }
 	char getFileData() { return FileData; }
 
-	
+	bool operator==(Attachment rhs);
+	bool operator!=(Attachment rhs);
+	bool operator=(Attachment rhs);
+	friend std::ostream& operator<<(std::ostream& outstream, Attachment rhs);
+	friend std::istream &operator >> (std::istream& input, Attachment rhs);
+
+	void print();
 
 private:
 	std::string FileName, FilePath;

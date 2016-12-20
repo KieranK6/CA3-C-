@@ -33,6 +33,11 @@ public:
 	std::string sender, recipient, subject, body;
 
 	bool operator==(Email rhs);
+	bool operator!=(Email rhs);
+	bool operator=(Email rhs);
+	friend std::ostream& operator<<(std::ostream& outstream, Email rhs);
+	friend std::istream &operator >> (std::istream& input, Email rhs);
+	
 
 	void print();
 private:
